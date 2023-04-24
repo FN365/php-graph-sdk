@@ -135,12 +135,12 @@ class Facebook
             'url_detection_handler' => null,
         ], $config);
 
-//        if (!$config['app_id']) {
-//            throw new FacebookSDKException('Required "app_id" key not supplied in config and could not find fallback environment variable "' . static::APP_ID_ENV_NAME . '"');
-//        }
-//        if (!$config['app_secret']) {
-//            throw new FacebookSDKException('Required "app_secret" key not supplied in config and could not find fallback environment variable "' . static::APP_SECRET_ENV_NAME . '"');
-//        }
+        if (!$config['app_id']) {
+            throw new FacebookSDKException('Required "app_id" key not supplied in config and could not find fallback environment variable "' . static::APP_ID_ENV_NAME . '"');
+        }
+        if (!$config['app_secret']) {
+            throw new FacebookSDKException('Required "app_secret" key not supplied in config and could not find fallback environment variable "' . static::APP_SECRET_ENV_NAME . '"');
+        }
 
         $this->app = new FacebookApp($config['app_id'], $config['app_secret']);
         $this->client = new FacebookClient(
